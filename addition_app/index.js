@@ -14,7 +14,7 @@ if (!score) {
 
 scoreE1.innerText = ` score: ${score} `
 
-questionE1.innerText = `What is ${num1} add by ${num2} ?`;
+questionE1.innerText = `What is ${num1} addition of ${num2} ?`;
 
 const correctAns = num1 + num2;
 
@@ -23,10 +23,10 @@ formE1.addEventListener("submit", () => {
     if (userAns === correctAns) {
         score++
         updateLocalStorage();
-    } else if (userAns.toString().match(/[a-z]/gi)) {
+    } else if (/^[a-zA-Z]+$/.test(userAns.toString())) {
         score = 0;
         updateLocalStorage();
-    }   else {
+    } else {
         score--
         updateLocalStorage();
     }
